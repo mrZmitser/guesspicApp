@@ -22,20 +22,17 @@ class MenuViewController: UIViewController {
         if textField.text == ""
         {
             textField.text = "User"
-            performSegue(withIdentifier: "GoPlay", sender: nil)
+            let vc = storyboard?.instantiateViewController(withIdentifier: "GoPlay") as! ViewController
+            //vc.property = "Green View Controller"
+            self.navigationController?.pushViewController(vc, animated: true)
+           // performSegue(withIdentifier: "GoPlay", sender: self)
         }
         else{
-            performSegue(withIdentifier: "GoPlay", sender: nil)
+            let vc = storyboard?.instantiateViewController(withIdentifier: "GoPlay") as! ViewController
+            //vc.property = "Green View Controller"
+            self.navigationController?.pushViewController(vc, animated: true)
+            //performSegue(withIdentifier: "GoPlay", sender: self)
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
